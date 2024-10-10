@@ -6,6 +6,11 @@
 }
 
 /*Boot CSS*/
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
 .center {
     max-width: 1280px;
     padding: 0 2%;
@@ -131,7 +136,12 @@ section.banner-principal form input[type=submit] {
 
 /*descrição do autor*/
 section.descricao-autor {
-    margin-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+section.descricao-autor div p {
+    margin-bottom: 10px;
 }
 
 /*especialidades*/
@@ -205,6 +215,83 @@ footer {
     text-align: center;
     color: black;
     font-weight: bold;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/*Página 404*/
+div.erro-404 {
+    text-align: justify;
+    width: 40%;
+    min-width: 500px;
+    margin: 0 auto;
+}
+
+h1.title-404 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h4.subtitle-404 {
+    text-align: center;
+}
+
+.text-404 {
+    margin: 20px auto;
+}
+
+.back-home-404 {
+    margin-bottom: 20px;
+}
+
+/*Contato*/
+div.contato-container {
+    display: block;
+    margin: 10px auto;
+}
+
+div.contato-container input[type="text"] {
+    width: 90%;
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+div.contato-container textarea {
+    width: 90%;
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+div.contato-container input[type="submit"] {
+    width: 90%;
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+div.map {
+    display: block;
+    width: 100%;
+}
+
+div.map iframe {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 /*@media screen -> Mobile*/
