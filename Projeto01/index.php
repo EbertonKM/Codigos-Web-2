@@ -95,6 +95,11 @@
     <!--Meu JS-->
     <script src="<?php echo INCLUDE_PATH;?>assets/js/scripts.js"></script>
 
+    <?php 
+        if($url == 'home' || $url == 'depoimentos' || $url == 'servicos' || $url == '') {?>
+            <script src="<?php echo INCLUDE_PATH;?>assets/js/slider.js"></script>
+    <?php } ?>
+
 </body>
 
 </html>

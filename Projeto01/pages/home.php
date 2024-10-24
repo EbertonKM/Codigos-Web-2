@@ -1,5 +1,8 @@
 <!--Banner-Principal-->
 <section class="banner-principal">
+    <div style="background-image: url('<?php echo INCLUDE_PATH;?>assets/img/bg-slide.jpg');"class="banner-single"></div><!--Banner single-->
+    <div style="background-image: url('<?php echo INCLUDE_PATH;?>assets/img/bg-slide2.jpg');" class="banner-single"></div><!--Banner single-->
+    <div style="background-image: url('<?php echo INCLUDE_PATH;?>assets/img/bg-slide3.jpg');" class="banner-single"></div><!--Banner single-->
         <div class="overlay"></div>
         <div class="center">
             <form action="">
@@ -8,6 +11,7 @@
                 <input type="submit" name="enviar" value="Enviar">
             </form>
         </div>
+        <div class="bullets"></div> <!--Bullets do carrossel-->
     </section>
 
     <!--Descricao-autor-->

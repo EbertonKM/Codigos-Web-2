@@ -80,10 +80,19 @@ nav.desktop a {
 section.banner-principal {
     width: 100%;
     height: 600px;
-    background-image: url(../img/bg-slide.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
+}
+
+/*banner-single*/
+.banner-single {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 section .overlay {
@@ -132,6 +141,32 @@ section.banner-principal form input[type=submit] {
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+/*bullets dos slides do carrossel*/
+.bullets {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
+.bullets span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.bullets span.active-slider {
+    background-color: lime;
+    transition: all ease 0.5s;
 }
 
 /*descrição do autor*/
