@@ -37,7 +37,7 @@
     <!--Especialidades-->
     <section class="especialidades">
         <div class="center">
-            <h2 class="title"></h2>
+            <h2 class="title">Especialidades</h2>
             <div class="w33 left box-especialidades">
                 <h3><i class="fa-brands fa-html5"></i></h3>
                 <h3>HTML 5</h3>

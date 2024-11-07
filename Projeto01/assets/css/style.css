@@ -52,9 +52,8 @@ header {
 }
 
 header .logo {
-    font-size: 20px;
-    color: white;
-    text-transform: uppercase;
+    width: 25px;
+    height: 25px;
 }
 
 .mobile {
@@ -241,6 +240,25 @@ p.nome-autor {
 .servicos li {
     font-size: 18px;
     margin-top: 10px;
+}
+
+/*botão do Whatsapp*/
+.btnWhatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 40px;
+    color: green;
+    font-size: 40px;
+    z-index: 20;
+    animation-name: whatsApp;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+@keyframes whatsApp {
+    from {color: green;}
+    to {color: limegreen;}
 }
 
 /*footer*/

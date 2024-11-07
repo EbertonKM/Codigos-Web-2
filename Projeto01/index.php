@@ -17,8 +17,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Style.css-->
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH;?>assets/css/style.css">
+    <!--Fav Icon-->
+    <link rel="shortcut icon" href="<?php echo INCLUDE_PATH;?>favicon.ico" type="image/x-icon">
 
-    <title>Projeto 1</title>
+    <title>IFPR</title>
 </head>
 
 <body>
@@ -41,7 +43,9 @@
     <!--Header-->
     <header>
         <div class="center">
-            <div class="logo left">Logomarca</div>
+            <div class="logo left">
+                <a href="<?php echo INCLUDE_PATH;?>"><img src="<?php echo INCLUDE_PATH;?>ifpr-logo.png" alt="LOGOMARCA"></a>
+            </div>
             <nav class="desktop right">
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH;?>">Home</a></li>
@@ -98,6 +102,16 @@
     <?php 
         if($url == 'home' || $url == 'depoimentos' || $url == 'servicos' || $url == '') {?>
             <script src="<?php echo INCLUDE_PATH;?>assets/js/slider.js"></script>
+            <script src="<?php echo INCLUDE_PATH;?>assets/js/melhorEmail.js"></script>
+            <!--Botão do Whats-->
+            <a href="https://wa.me/5547969696969" class="btnWhatsapp" target="_blank">
+                <i class="fa-brands fa-square-whatsapp"></i>
+            </a>
+    <?php } ?>
+
+    <?php 
+        if($url == 'home' || $url == '') {?>
+            <script src="<?php echo INCLUDE_PATH;?>assets/js/especialidades.js"></script>
     <?php } ?>
 
 </body>
