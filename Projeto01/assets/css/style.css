@@ -75,6 +75,12 @@ nav.desktop a {
     text-decoration: none;
 }
 
+.header-icon {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2px;
+}
+
 /*banner-principal*/
 section.banner-principal {
     width: 100%;

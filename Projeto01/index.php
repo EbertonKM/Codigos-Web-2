@@ -24,7 +24,6 @@
 </head>
 
 <body>
-
     <?php
         //Obtendo a url se existir ou home
         $url = isset($_GET['url']) ? $_GET['url'] : 'home'; //equivalente a lógica de if(exists(get('url'))) {url = get(url)} else {url = 'home'}
@@ -44,7 +43,7 @@
     <header>
         <div class="center">
             <div class="logo left">
-                <a href="<?php echo INCLUDE_PATH;?>"><img src="<?php echo INCLUDE_PATH;?>ifpr-logo.png" alt="LOGOMARCA"></a>
+                <a href="<?php echo INCLUDE_PATH;?>"><img class="header-icon" src="<?php echo INCLUDE_PATH;?>ifpr-logo.png" alt="LOGOMARCA"></a>
             </div>
             <nav class="desktop right">
                 <ul>
