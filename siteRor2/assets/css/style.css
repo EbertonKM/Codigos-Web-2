@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+/*CSS reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", sans-serif;
+    color: black;
+    scroll-behavior: smooth;
+}
+
+/*Remover a estilização padrão de links*/
+a,
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+/*Background fosco - Aplicado por meio da classe*/
+.bg-fosco {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border-top: 0.01rem solid rgba(153, 153, 153, 0.5);
+    border-left: 0.01rem solid rgba(153, 153, 153, 0.5);
+    border-right: 0.01rem solid lightsteelblue;
+    border-bottom: 0.01rem solid lightsteelblue;
+}
+
+/*Background de gradiente horizontal para direita - Aplicado por meio da classe*/
+.bg-gradiente-direita {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent, transparent);
+}
+
+@media screen and (max-width:768px) {
+    .bg-gradiente-direita {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+    }
+}
+
+/*Todas as sections recebem uma margem ao scrollar pelo botão até ela*/
+section,
+#arti,
+#caca,
+#coma,
+#enge {
+    scroll-margin: 6.5rem;
+}
+
+/*Formatação de todos os títulos de seção*/
+.titulo {
+    width: 100%;
+    text-align: center;
+    padding: 0.2rem;
+    margin-top: 3rem;
+}
+
+/*---IMAGEM DE FUNDO DA PÁGINA - BACKGROUND---*/
+.background {
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+/*Animação de hover scale. Apenas aplicado em telas grandes*/
+@media screen and (min-width:991px) {
+    .hover-scale:hover, .hover-scale-survivor:hover {
+        transform: scale(1.2);
+        transition: transform 0.2s ease;
+    }
+
+    .hover-scale, .hover-scale-survivor {
+        transition: transform 0.2s ease;
+    }
+}
+
+@media screen and (max-width:992px) {
+
+    /*Animação de hover scale. Apenas aplicado em pequenas*/
+    .hover-scale:hover {
+        transform: scale(1.07);
+        transition: transform 0.2s ease;
+        background: white;
+    }
+    
+    .hover-scale {
+        transition: transform 0.2s ease;
+    }
+}
+
+/*---ESTILIZAÇÕES DO HEADER---*/
+
+/*Torna o header fixo*/
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+header img {
+    border-radius: 1rem;
+}
+
+/*Ajustar a distância entre cada opção do header*/
+.nav-item {
+    margin-left: 15px;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width:992px){
+    /*Joga o icone no centro de telas mobile*/
+    .navbar-brand {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/*---ESTILIZAÇÕES DO BANNER---*/
+
+/*Container do banner*/
+#banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/*Container das tags*/
+.tag-container {
+    display: flex;
+    max-width: 100%;
+}
+
+/*Cada uma das três tags*/
+.tag {
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-right: 0.1rem solid lightsteelblue;
+    border-bottom: 0.1rem solid lightsteelblue;
+    width: 16rem;
+    text-align: center;
+}
+
+/*Botão "Jogue já"*/
+#banner a {
+    margin-top: 1rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:768px) {
+
+    /*Ajusta o tamanho da logo para telas mobile*/
+    #banner img {
+        width: 22rem;
+        height: 9.5rem;
+    }
+
+    /*Organiza a disposição das tags*/
+    .tag-container {
+        flex-direction: column;
+    }
+
+    .tag {
+        margin-top: 0.5rem;
+    }
+}
+
+/*---ESTILIZAÇÕES DAS INFORMAÇÕES---*/
+
+/*Cada bloco de informação*/
+.info-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 4rem;
+    padding: 1rem;
+}
+
+/*Container com <h2> e <p>*/
+#informacoes .texto {
+    width: 60%;
+}
+
+/*Imagem*/
+#informacoes .imagem {
+    width: 30%;
+    border-radius: 10px;
+    border: 1px solid lightsteelblue;
+}
+
+/*Inverte a ordem dos elementos (bloco 2 e 4)*/
+#informacoes .flex-invertido {
+    flex-direction: row-reverse;
+}
+
+/*Remove as margens em telas médias*/
+@media screen and (max-width:992px) {
+    .info-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/*Coloca a imagem embaixo do texto em telas menores*/
+@media screen and (max-width:768px) {
+    .info-container {
+        flex-wrap: wrap;
+    }
+
+    #informacoes .texto {
+        width: 90%;
+        text-align: center;
+    }
+
+    #informacoes .imagem {
+        width: 90%;
+    }
+}
+
+/*---ESTILIZAÇÃO DOS SOBREVIVENTES---*/
+/*CARDS DE SELEÇÃO*/
+
+/*Garante que todos os containers estejam perfeitamente centralizados*/
+#sobreviventes {
+    text-align: center;
+}
+
+/*Div usada para centralizar os cards em cada quarto da tela*/
+.container-seletor {
+    display: inline-block;
+    text-align: center;
+    width: calc(16% - 4px);
+}
+
+/*Cada card de seleção de personagem*/
+.seletor {
+    display: inline-block;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.seletor img {
+    border-bottom: 0.1rem solid rgba(153, 153, 153, 0.5);
+}
+
+/*Nome de cada personagem*/
+#sobreviventes h4 {
+    padding-top: 0.4rem;
+}
+
+/*Modifica a disposição dos cards de 1x4 para 2x2*/
+@media screen and (max-width:768px) {
+    .container-seletor {
+        width: calc(40% - 4px);
+    }
+}
+
+/*DESCRIÇÃO DAS HABILIDADES*/
+
+/*Cada bloco de descrição*/
+.container-habilidade {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 4rem;
+    padding: 1rem;
+}
+
+/*Identificação do personagem*/
+.nome-sobrevivente {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/*Pequeno icone do personagem*/
+.nome-sobrevivente img {
+    height: 4rem;
+}
+
+/*Nome do personagem*/
+.nome-sobrevivente h3 {
+    margin-left: 1rem;
+}
+
+/*Container das descrições*/
+.habilidade {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    width: 25%;
+}
+
+/*Descrição da habilidade*/
+.habilidade p {
+    margin: 0.2rem 2rem;
+}
+
+/*Icone da habilidade*/
+.habilidade img {
+    margin: 0 auto;
+    height: 5rem;
+    width: 5rem;
+    border: 0.1rem solid lightsteelblue;
+}
+
+/*Remove a margem lateral em telas médias*/
+@media screen and (max-width:992px) {
+    .container-habilidade {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+/*Coloca as descrições em 2x2 em telas mobile*/
+@media screen and (max-width:768px) {
+    .habilidade {
+        width: 50%;
+        margin: 1rem 0;
+    }
+}
+
+/*---ESTILIZAÇÃO DOS MAPAS---*/
+
+/*Container que separa os mapas em níveis*/
+.nivel-mapa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    margin: 1rem 4rem;
+    padding: 1rem;
+}
+
+/*Título do nível do mapa*/
+.nivel-mapa h3 {
+    grid-column: 1 / -1;
+    padding: 0.2rem;
+}
+
+/*Container das informações do mapa*/
+.nivel-mapa .descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.2rem;
+}
+
+/*Nome do mapa*/
+.nivel-mapa h4 {
+    width: 100%;
+}
+
+/*Descrição do mapa*/
+.nivel-mapa p {
+    width: 100%;
+    padding: 0 0.2rem;
+}
+
+/*Imagem do mapa*/
+.nivel-mapa img {
+    width: 50%;
+    border: 1px solid lightsteelblue;
+}
+
+/*Linha horizontal - Usada apenas em telas pequenas*/
+.nivel-mapa hr {
+    display: none;
+}
+
+/*Remove as margens laterais em telas médias*/
+@media screen and (max-width:992px) {
+    .nivel-mapa {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    /*Reduz o grid a apenas 1 coluna*/
+    .nivel-mapa {
+        margin: 1rem 0;
+        grid-template-columns: 1fr;
+    }
+
+    /*Centraliza a imagem em telas pequenas*/
+    .nivel-mapa img {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        border-radius: 0.5rem;
+    }
+
+    /*Mostra a barra horizontal em telas pequenas*/
+    .nivel-mapa hr {
+        display: block;
+    }
+}
+
+/*---ESTILIZAÇÃO DO FOOTER---*/
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+}
+
+/*Logo do footer*/
+.footer-logo {
+    width: 50%;
+    display: block;
+    margin: auto auto;
+}
+
+/*Texto de copyright*/
+.footer-texto {
+    display: block;
+    margin: auto auto;
+}
+
+/*nav de opções do footer*/
+.footer-opcoes {
+    display: flex;
+    margin: auto auto;
+    text-align: center;
+}
+
+/*Cada link de opção do footer*/
+.footer-opcoes a{
+    padding: 0.2rem 0.5rem;
+    margin: 0.1rem 0.5rem;
+}
+
+@media screen and (max-width:768px) {
+    /*Reduz o footer de 3 colunas para 1 em telas pequenas*/
+    footer {
+        grid-template-columns: 1fr;
+        gap: 0.5rem 0;
+        padding-bottom: 0.5rem;
+    }
+
+    /*Aumenta a área de click para telas menores*/
+    .footer-opcoes a {
+        font-size: 1.2rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+/*---ESTILIZAÇÃO PAGINA DE SUPORTE---*/
+
+/*Div container de tudo dentro do main da página*/
+.suporte-form-container {
+    width: 100%;
+    margin: 5% 0;
+    text-align: center;
+    margin-top: 125px;
+}
+
+/*Título "Contatar Suporte"*/
+.suporte-form-container h3 {
+    margin: 0.5rem 0;
+}
+
+/*<from>*/
+.formulario {
+    margin: 1rem 15rem;
+}
+
+/*Div do <button> e <a>*/
+.botoes {
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: start;
+    padding: 0 0.5rem;
+}
+
+/*Botão enviar*/
+.botoes button {
+    width: 20%;
+    height: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid darkgray;
+    transition: background-color 0.2s ease;
+}
+
+/*Link para voltar*/
+.botoes a {
+    width: 20%;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: 1px solid darkgray;
+    padding: 0.4rem 1.2rem;
+    margin-left: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+/*Efeitos de hover dos links*/
+.botoes button:hover, .botoes a:hover {
+    background-color: darkgrey;
+    transition: background-color 0.2s ease;
+}
+
+@media screen and (max-width:768px){
+    /*Muda a disposição dos botões em telas pequenas*/
+    .botoes {
+        justify-content: space-between;
+    }
+
+    /*Melhora o posicionamento vertical do form em telas menores*/
+    .suporte-form-container {
+        margin: 20% 0;
+        margin-top: 120px;
+        margin-bottom: 180px;
+    }
+
+    /*Remove as margens em telas menores*/
+    .formulario {
+        margin: 1rem 1rem;
+    }
+
+    /*Ajusta a largura dos "botoes em telas menores"*/
+    .botoes button, .botoes a {
+        width: 45%;
+    }
+}
+
+/*---ESTILIZAÇÃO SOBRE NÓS---*/
+
+/*Section Container de tudo*/
+.sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% 0;
+    padding: 1rem 0;
+}
+
+/*Títulos das informações*/
+.sobre h2 {
+    margin-top: 0.6rem;
+}
+
+/*Textos das informações*/
+.sobre p{
+    width: 70%;
+}
+
+/*Link do instagram*/
+.sobre a {
+    width: 10%;
+    margin-top: 0.2rem;
+}
+
+/*Icone do instagram dentro do Link do instagram*/
+.sobre img {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0.2rem 0.4rem;
+    background-color: lightslategrey;
+    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease;
+}
+
+/*Efeitos de hover especiais além do hover-scale como icone do instagram*/
+.sobre img:hover {
+    background-color: lightsteelblue;
+    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease;
+}
+
+/*Botão de voltar ao index.html*/
+.voltar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+/*Ajusta o tamanho do botão do instagram em telas menores*/
+@media screen and (max-width:768px) {
+    .sobre .instagram {
+        width: 35%;
+    }
+    .sobre {
+        margin-top: 120px;
+        margin-bottom: 180px;
+    }
+}
+
+/*---ESTILIZAÇÃO 404---*/
+
+/*Section container de tudo*/
+.notFound {
+    margin-top: 130px;
+    padding: 10px 30px;
+}
+
+/*Div com a imagem e os h1 e h3*/
+.notFound-titulo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
