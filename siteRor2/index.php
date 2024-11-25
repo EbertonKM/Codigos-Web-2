@@ -113,6 +113,7 @@
     <?php if($url == 'home') {?>
     <script src="<?php echo INCLUDE_PATH;?>assets/js/tags.js"></script>
     <script src="<?php echo INCLUDE_PATH;?>assets/js/suporteFeedBack.js"></script>
+    <script src="<?php echo INCLUDE_PATH;?>assets/js/novidades.js"></script>
     <?php }?>
 </body>
 

@@ -58,6 +58,12 @@ section,
     margin-top: 3rem;
 }
 
+/*Classe para colocar todos os itens na vertical*/
+.itens-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
 /*---IMAGEM DE FUNDO DA PÁGINA - BACKGROUND---*/
 .background {
     position: fixed;
@@ -204,6 +210,31 @@ header img {
 /*Inverte a ordem dos elementos (bloco 2 e 4)*/
 #informacoes .flex-invertido {
     flex-direction: row-reverse;
+}
+
+/*Input email para novidades*/
+.itens-vertical form input {
+    width: 300px;
+    padding: 5px;
+}
+
+/*Form do últimas notícias*/
+.itens-vertical form {
+    align-items: center;
+}
+
+/*Botão de submit do email*/
+.itens-vertical form button {
+    padding: 6px;
+    width: 100px;
+    border-radius: 0.2rem;
+    border: 1px solid darkgray;
+    transition: background-color 0.2s ease;
+}
+
+.itens-vertical form button:hover {
+    background-color: darkgray;
+    transition: transform 0.2s ease;
 }
 
 /*Remove as margens em telas médias*/

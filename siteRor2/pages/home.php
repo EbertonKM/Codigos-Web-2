@@ -59,6 +59,13 @@
                 </div>
                 <img src="<?php echo INCLUDE_PATH;?>assets/img/backgrounds/solo-coop.jpg" alt="imagem-ilustração" class="imagem">
             </div>
+            <div class="info-container bg-fosco itens-vertical">
+                <h3>Fique sabendo das últimas notícias</h3>
+                <form action="" method="post">
+                    <input type="email" placeholder="E-mail" name="email">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </section>
 
         <!--Sobreviventes usando display block-->

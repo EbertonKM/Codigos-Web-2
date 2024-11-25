@@ -7,4 +7,4 @@
     } else if(status == 'erro') {
         alert('Falha ao enviar o e-mail, tente novamente mais tarde');
     }
-});
+})();
