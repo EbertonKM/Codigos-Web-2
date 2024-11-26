@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: lightgrey;
+}
+
+.box-login {
+    display: flex;
+    flex-direction: column;
+    padding: 35px 3%;
+    min-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.box-login input[type="submit"] {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.box-login input[type="submit"]:hover {
+    background-color: limegreen;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+    border-color: gray;
+    color: white;
+}
+
+.box-login input[type="text"], .box-login input[type="password"] {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.box-login * {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 5px;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho img {
+    width: 60px;
+    height: 60px;
+}
+
+.erro-box {
+    text-align: center;
+    background-color: rgb(255, 144, 144);
+    font-size: 18px;
+    color: white;
+}
+
+/*Painel de controle*/
+.clear {
+    clear: both;
+}
+
+.center {
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+aside {
+    float: left;
+    overflow-y: auto;
+    height: 100%;
+    width: 250px;
+    background-color: rgb(120, 200, 120);
+}
+
+header {
+    float: left;
+    padding: 10px 0;
+    background-color: limegreen;
+    width: calc(100% - 250px);
+}
+
+i {
+    color: white;
+}
