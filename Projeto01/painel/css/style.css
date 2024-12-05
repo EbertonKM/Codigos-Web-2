@@ -25,17 +25,10 @@ html, body {
     box-shadow: 2px 2px 5px gray;
 }
 
-.box-login input[type="submit"] {
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.box-login input[type="submit"]:hover {
-    background-color: limegreen;
-    transition: background-color 0.2s ease;
-    border-radius: 5px;
-    border-color: gray;
-    color: white;
+.box-login * {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 5px;
 }
 
 .box-login input[type="text"], .box-login input[type="password"] {
@@ -43,10 +36,46 @@ html, body {
     border-radius: 5px;
 }
 
-.box-login * {
-    width: 100%;
-    margin: 5px 0;
+.box-login input[type="submit"] {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid darkgray;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: -2px;
+    transition: all 0.2s ease;
+}
+
+.box-login input[type="submit"]:hover {
+    background-color: limegreen;
+    transition: background-color 0.2s ease;
+    border-color: gray;
+    color: white;
+}
+
+.voltar {
+    display: block;
+    width: calc(100% - 10px);
+    margin: 0 auto;
     padding: 5px 5px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    border: 1px solid darkgray;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
+
+.voltar:hover {
+    background-color: limegreen;
+    transition: background-color 0.2s ease;
+    border-color: gray;
+    color: white;
 }
 
 .cabecalho {
@@ -77,20 +106,138 @@ html, body {
 }
 
 aside {
-    float: left;
+    left: 0;
+    top: 0;
+    position: fixed;
+    padding-top: 20px;
     overflow-y: auto;
     height: 100%;
     width: 250px;
     background-color: rgb(120, 200, 120);
 }
 
+div.box-usuario {
+    text-align: center;
+}
+
+div.avatar-usuario {
+    text-align: left;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid darkslategray;
+}
+
+.avatar-usuario i {
+    font-size: 50px;
+    position: relative;
+    color: darkslategray;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.imagem-usuario {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border: 2px solid darkslategray;
+    border-radius: 50%;
+}
+
+.imagem-usuario img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-usuario {
+    margin: 10px 0;
+    color: darkslategray;
+}
+
+.nome-usuario p {
+    display: inline-block;
+    font-size: 16px;
+    border: 0.5px solid darkslategray;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
 header {
-    float: left;
+    position: relative;
+    left: 250px;
     padding: 10px 0;
     background-color: limegreen;
     width: calc(100% - 250px);
 }
 
-i {
+.logout {
+    float: right;
+}
+
+.logout a {
     color: white;
+    font: 18px;
+}
+
+.menu-btn {
+    float: left;
+    cursor: pointer;
+    color: white;
+}
+
+.content {
+    width: calc(100% - 250px);
+    left: 250px;
+    position: relative;
+
+    background-color: goldenrod;
+    height: 100px;
+}
+
+.items-menu {
+    margin-top: 30px;
+}
+
+.items-menu h2 {
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background-color: darkslategray;
+    box-shadow: 0px 2px 5px darkslategray;
+}
+
+.items-menu a {
+    display: block;
+    padding: 3px 10px;
+    text-decoration: none;
+    color: darkslategray;
+    transition: all 0.2s ease;
+}
+
+.items-menu a:hover {
+    color: white;
+    background-color: gray;
+    transition: all 0.2s ease;
+    
+}
+
+/*Mobile - Media Query*/
+@media screen and (max-width:768px) {
+    aside {
+        display: none;
+    }
+
+    header, .content {
+        width: 100%;
+        left: 0;
+    }
 }

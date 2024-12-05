@@ -24,4 +24,14 @@
 
     spl_autoload_register($autoload);
 
+    //função para os cargos dentro do paiel
+    function pegaCargo($cargo) {
+        $vetor = [
+            '0' => 'Usuário',
+            '1' => 'Gerente',
+            '2' => 'Desenvolvedor'
+        ];
+        return $vetor[$cargo];
+    }
+
 ?>

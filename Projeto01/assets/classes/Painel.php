@@ -7,6 +7,7 @@
 
         public static function logout() {
             session_destroy();
+            header('Location:'.INCLUDE_PATH_PAINEL);
         }
     }
 ?>
