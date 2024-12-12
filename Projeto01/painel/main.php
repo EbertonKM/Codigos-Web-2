@@ -38,7 +38,7 @@
         <div class="items-menu">
             <h2>Cadastro</h2>
             <a href="">Slide</a>
-            <a href="">Depoimentos</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento">Depoimentos</a>
             <a href="">Serviços</a>
             <h2>Gestão</h2>
             <a href="">Slide</a>
@@ -63,11 +63,23 @@
                     <i class="fa-solid fa-right-from-bracket"></i>
                 </a>
             </div>
+            <div class="home-btn">
+                <a href="<?php echo INCLUDE_PATH_PAINEL;?>">
+                    <i class="fa-solid fa-table-columns"></i>
+                </a>
+            </div>
+            <div class="home-page-btn">
+                <a href="<?php echo INCLUDE_PATH;?>">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </div>
             <div class="clear"></div>
         </div>
     </header>
     <div class="content">
-
+        <?php 
+            Painel::loadPage();
+        ?>
     </div>
     <!--Link do jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"

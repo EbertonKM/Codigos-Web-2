@@ -5,6 +5,12 @@
     por meio de um cookie*/
     session_start();
 
+    //fuso horário
+    date_default_timezone_set('America/Sao_Paulo');
+
+    //nome da empresa
+    define('NOME_EMPRESA', 'IFPR');
+
     //definição do domínio do site
     define('INCLUDE_PATH', 'http://localhost/Projeto01/');
 

@@ -1,4 +1,6 @@
-<?php include('config.php')?>
+<?php include('config.php');?>
+<?php Site::updateUserOnline()?>
+<?php Site::countUser();?>
 
 <!DOCTYPE html>
 <html lang="en, pt-br">
