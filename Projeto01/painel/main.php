@@ -53,22 +53,22 @@
     </aside>
     <header>
         <div class="center">
-            <div class="menu-btn">
+            <div class="menu-btn header-button">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <div class="center">
-            <div class="logout">
+            <div class="logout header-button">
                 <a href="<?php echo INCLUDE_PATH_PAINEL;?>?logout">
                     <i class="fa-solid fa-right-from-bracket"></i>
                 </a>
             </div>
-            <div class="home-btn">
+            <div class="home-btn header-button">
                 <a href="<?php echo INCLUDE_PATH_PAINEL;?>">
                     <i class="fa-solid fa-table-columns"></i>
                 </a>
             </div>
-            <div class="home-page-btn">
+            <div class="home-page-btn header-button">
                 <a href="<?php echo INCLUDE_PATH;?>">
                     <i class="fa-solid fa-house"></i>
                 </a>

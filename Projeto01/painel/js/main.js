@@ -9,22 +9,24 @@ $(function() {
     $('.menu-btn').click(function() {
         if(open) {
             $('header, .content').animate({width:'100%', left:'0'});
-            $('aside').fadeOut(500);
+            $('aside').animate({left: '-250px'});
             open = false
         }else {
             windowSize = $(window)[0].innerWidth;
-            $('header, .content').animate({width:windowSize-250, left:'250px'});
-            $('aside').fadeIn(1);
+            $('header, .content').animate({width: (windowSize-250) + 'px', left:'250px'});
+            $('aside').animate({left: '0'});
             open = true
         }
     })
 
-    if(windowSize != $(window)[0].innerWidth) {
-        windowSize = $(window)[0].innerWidth;
-        if(!open) {
-            $('header, .content').animate({width:'100%', left:'0'});
-        }else {
-            $('header, .content').animate({width:windowSize-250, left:'250px'});
+    $(window).resize(function() {
+        if(windowSize != $(window)[0].innerWidth) {
+            windowSize = $(window)[0].innerWidth;
+            if(!open) {
+                $('header, .content').css('width', '100%');
+            }else {
+                $('header, .content').css('width', 'calc(100% - 250px)');
+            }
         }
-    }
+    })
 })
