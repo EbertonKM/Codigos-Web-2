@@ -50,7 +50,7 @@ html, body {
 }
 
 .box-login input[type="submit"]:hover {
-    background-color: limegreen;
+    background-color: rgb(120, 200, 120);
     transition: background-color 0.2s ease;
     border-color: gray;
     color: white;
@@ -72,7 +72,7 @@ html, body {
 }
 
 .voltar:hover {
-    background-color: limegreen;
+    background-color: rgb(120, 200, 120);
     transition: background-color 0.2s ease;
     border-color: gray;
     color: white;
@@ -174,7 +174,7 @@ header {
     position: relative;
     left: 250px;
     padding: 10px 0;
-    background-color: limegreen;
+    background-color: rgb(120, 200, 120);
     width: calc(100% - 250px);
 }
 

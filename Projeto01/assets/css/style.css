@@ -47,7 +47,7 @@ img {
 
 /*header*/
 header {
-    background-color: limegreen;
+    background-color: rgb(120, 200, 120);
     padding: 10px 0;
 }
 
@@ -154,18 +154,24 @@ section.banner-principal form input[type=email] {
     color: black;
     font-size: 24px;
     padding-left: 10px;
-    border: 1px solid lime  green;
+    border: 0;
 }
 
 section.banner-principal form input[type=submit] {
     width: 100%;
     height: 50px;
     margin-top: 10px;
-    background-color: limegreen;
+    background-color: rgb(120, 200, 120);
     color: white;
     font-size: 24px;
     cursor: pointer;
+    border: 2px solid rgb(120, 200, 120);;
 }
+
+section.banner-principal form input[type=submit]:hover {
+    border-color: rgb(200, 250, 200);
+}
+
 /*bullets dos slides do carrossel*/
 .bullets {
     position: absolute;
@@ -189,7 +195,7 @@ section.banner-principal form input[type=submit] {
 }
 
 .bullets span.active-slider {
-    background-color: lime;
+    background-color: rgb(120, 200, 120);
     transition: all ease 0.5s;
 }
 
@@ -208,7 +214,7 @@ section.especialidades {
     text-align: center;
     font-size: 18px;
     padding: 20px 0;
-    background-color: rgba(50, 205, 50, 0.75);
+    background-color: rgb(120, 200, 120);
 }
 
 section.especialidades .title {
@@ -283,12 +289,12 @@ p.nome-autor {
 
 @keyframes whatsApp {
     from {color: green;}
-    to {color: limegreen;}
+    to {color: rgb(120, 200, 120);}
 }
 
 /*footer*/
 footer {
-    background-color: limegreen;
+    background-color: rgb(120, 200, 120);
     padding: 10px;
     text-align: center;
     color: black;
@@ -401,7 +407,7 @@ div.map iframe {
         position: absolute;
         left: 0;
         width: 100%;
-        background-color: darkgreen;
+        background-color: rgb(120, 200, 120);
         text-align: center;
         display: none;
     }
