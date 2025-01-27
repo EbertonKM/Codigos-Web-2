@@ -52,12 +52,16 @@ header {
 }
 
 header .logo {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
 }
 
 .mobile {
     display: none;
+}
+
+nav.desktop {
+    margin-top: 0.5%;
 }
 
 nav.desktop ul {
@@ -73,6 +77,21 @@ nav.desktop li {
 nav.desktop a {
     color: white;
     text-decoration: none;
+}
+
+nav.desktop a:hover, nav.desktop li:last-child a:hover {
+    color: seagreen;
+    border-color: seagreen;
+}
+
+nav.desktop li:last-child a {
+    padding: 2px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+nav.desktop i {
+    margin: 0 4px;
 }
 
 .header-icon {

@@ -53,7 +53,6 @@
                     <li><a href="<?php echo INCLUDE_PATH;?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>servicos">Serviços</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>contato">Contato</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH;?>pagenotfound">404</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>painel"><i class="fa-solid fa-user"></i></a></li>
                 </ul>
             </nav>
@@ -64,7 +63,6 @@
                     <li><a href="<?php echo INCLUDE_PATH;?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>servicos">Serviços</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>contato">Contato</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH;?>pagenotfound">404</a></li>
                     <li><a href="<?php echo INCLUDE_PATH;?>painel"><i class="fa-solid fa-user"></i></a></li>
                 </ul>
             </nav>
