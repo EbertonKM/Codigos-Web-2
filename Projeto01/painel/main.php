@@ -37,18 +37,18 @@
         </div>
         <div class="items-menu">
             <h2>Cadastro</h2>
-            <a href="">Slide</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-slide">Slide</a>
             <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento">Depoimentos</a>
-            <a href="">Serviços</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-servico">Serviços</a>
             <h2>Gestão</h2>
-            <a href="">Slide</a>
-            <a href="">Depoimentos</a>
-            <a href="">Serviços</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-slide">Slide</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-depoimento">Depoimentos</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-servico">Serviços</a>
             <h2>Usuário</h2>
-            <a href="">Adicionar</a>
-            <a href="">Editar</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>adicionar-usuario">Adicionar</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>editar-usuario">Editar</a>
             <h2>Configuração</h2>
-            <a href="">Editar</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>editar-configuracao">Editar</a>
         </div>
     </aside>
     <header>

@@ -264,6 +264,43 @@ header {
     font: 22px;
 }
 
+.box-content form {
+    margin: 30px;
+}
+
+.box-content .form-group {
+    margin: 10px 0;
+}
+
+.box-content form input[type="text"],
+.box-content form input[type="password"],
+.box-content form input[type="file"] {
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    padding: 4px;
+    border: 1px solid black;
+}
+
+.box-content form input[type="file"] {
+    border-style: dashed;
+}
+
+.box-content form input[type="submit"] {
+    width: 15%;
+    height: 40px;
+    margin-top: 10px;
+    background-color: rgb(120, 200, 120);
+    border: 2px solid rgb(120, 200, 120);
+    cursor: pointer;
+}
+
+.box-content form input[type="submit"]:hover {
+    color: white;
+    background-color: gray;
+    border-color: gray;
+}
+
 /*Box Métricas*/
 .box-metricas {
     display: flex;
