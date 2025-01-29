@@ -255,6 +255,7 @@ header {
     background-color: lightgray;
 }
 
+/*Página Editar Usuário*/
 .box-content {
     padding: 20px;
 }
@@ -301,6 +302,21 @@ header {
     border-color: gray;
 }
 
+.box-alert {
+    width: 100%;
+    padding: 8px;
+    color: white;
+    text-align: center;
+}
+
+.sucesso {
+    background-color: rgb(120, 200, 120);
+}
+
+.erro {
+    background-color: rgb(230, 130, 130);
+}
+
 /*Box Métricas*/
 .box-metricas {
     display: flex;
@@ -324,7 +340,7 @@ header {
     background-color: rgb(120, 200, 120);
 }
 .box-metrica-single:nth-of-type(2) {
-    background-color: rgb(200, 120, 120)
+    background-color: rgb(230, 130, 130);
 }
 .box-metrica-single:nth-of-type(3) {
     background-color: rgb(120, 120, 200);
@@ -371,6 +387,10 @@ header {
     background-color: gray;
     transition: all 0.2s ease;
     
+}
+
+.menu-active::before {
+    content: '> ';
 }
 
 /*Mobile - Media Query*/

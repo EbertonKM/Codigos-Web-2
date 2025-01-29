@@ -17,6 +17,9 @@
     //definição da URL do paiel
     define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
 
+    //diretório base das imagens
+    define('BASE_DIR_PAINEL', __DIR__.'/painel/');
+
     //banco de dados
     define('HOST', 'localhost');
     define('DATABASE', 'projeto_01');
@@ -34,10 +37,38 @@
     function pegaCargo($cargo) {
         $vetor = [
             '0' => 'Usuário',
-            '1' => 'Gerente',
-            '2' => 'Desenvolvedor'
+            '1' => 'Funcionário',
+            '2' => 'Gerente',
+            '3' => 'CEO',
+            '4' => 'Desenvolvedor'
         ];
         return $vetor[$cargo];
     }
 
+    //função para o menu selecionado
+    function selecionarMenu($menuItem) {
+        $url = explode('/',@$_GET['url'])[0];
+        if($url == $menuItem) {
+            echo 'class="menu-active"';
+        }
+    }
+
+    //função para verificar a permissão por usuário
+    function verificaPermissaoMenu($permissao) {
+        if($_SESSION['cargo'] >= $permissao) {
+            return true;
+       }else {
+            echo 'style="display:none"';
+       }
+    }
+
+    //função para verificar a permissão para exibir a página na url
+    function verificaPermissaoPagina($permissao) {
+        if($_SESSION['cargo'] >= $permissao) {
+            return true;
+        }else {
+            include('painel/pages/permissao-negada.php');
+            die();
+        }
+    }
 ?>

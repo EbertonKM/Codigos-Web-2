@@ -36,19 +36,19 @@
             </div>
         </div>
         <div class="items-menu">
-            <h2>Cadastro</h2>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-slide">Slide</a>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento">Depoimentos</a>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-servico">Serviços</a>
-            <h2>Gestão</h2>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-slide">Slide</a>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-depoimento">Depoimentos</a>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-servico">Serviços</a>
+            <h2 <?php verificaPermissaoMenu(2)?>>Cadastro</h2>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('cadastrar-slide')?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-slide">Slide</a>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('cadastrar-depoimento')?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento">Depoimentos</a>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('cadastrar-servico')?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-servico">Serviços</a>
+            <h2 <?php verificaPermissaoMenu(2)?>>Gestão</h2>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('gerir-slide')?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-slide">Slide</a>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('gerir-depoimento')?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-depoimento">Depoimentos</a>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('gerir-servico')?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-servico">Serviços</a>
             <h2>Usuário</h2>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>adicionar-usuario">Adicionar</a>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>editar-usuario">Editar</a>
-            <h2>Configuração</h2>
-            <a href="<?php echo INCLUDE_PATH_PAINEL;?>editar-configuracao">Editar</a>
+            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('adicionar-usuario')?> href="<?php echo INCLUDE_PATH_PAINEL;?>adicionar-usuario">Adicionar</a>
+            <a <?php selecionarMenu('editar-usuario')?> href="<?php echo INCLUDE_PATH_PAINEL;?>editar-usuario">Editar</a>
+            <h2 <?php verificaPermissaoMenu(3)?>>Configuração</h2>
+            <a <?php verificaPermissaoMenu(3)?> <?php selecionarMenu('editar-configuracao')?> href="<?php echo INCLUDE_PATH_PAINEL;?>editar-configuracao">Editar</a>
         </div>
     </aside>
     <header>
@@ -63,7 +63,7 @@
                     <i class="fa-solid fa-right-from-bracket"></i>
                 </a>
             </div>
-            <div class="home-btn header-button">
+            <div class="home-btn header-button" <?php verificaPermissaoMenu(1)?>>
                 <a href="<?php echo INCLUDE_PATH_PAINEL;?>">
                     <i class="fa-solid fa-table-columns"></i>
                 </a>

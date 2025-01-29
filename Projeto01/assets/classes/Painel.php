@@ -46,5 +46,35 @@
             $sql->execute();
             return $sql->rowCount();
         }
+
+        public static function messageToUser($type, $message) {
+            if($type == 'sucesso') {
+                echo '<div class="box-alert sucesso"><i class="fa-solid fa-check"></i> '.$message.'</div>';
+            }else {
+                echo '<div class="box-alert erro"><i class="fa-solid fa-times"></i> '.$message.'</div>';
+            }
+        }
+
+        public static function validImage($image) {
+            if($image['type'] == 'image/jpeg' || $image['type'] == 'image/jpg' || $image['type'] == 'image/png') {
+                $size = intval($image['size']/1024);
+                if($size < 750) {
+                    return true;
+                }else {
+                    Painel::messageToUser('erro', 'Limite de tamanho da imagem é 750KB');
+                }
+            }
+        }
+
+        public static function uploadFile($file) {
+            if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.'uploads/'.$file['name'])) {
+                return $file['name'];
+            }
+            return false;
+        }
+
+        public static function deleteFile($file) {
+            @unlink('uploads/'.$file);
+        }
     }
 ?>
