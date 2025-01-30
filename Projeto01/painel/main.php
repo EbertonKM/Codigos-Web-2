@@ -16,6 +16,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL;?>css/style.css">
+    <link rel="shortcut icon" href="<?php echo INCLUDE_PATH;?>favicon.ico" type="image/x-icon">
     <title>Painel de controle</title>
 </head>
 <body>

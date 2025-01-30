@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/01/2025 às 01:57
+-- Tempo de geração: 30/01/2025 às 21:49
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,8 @@ CREATE TABLE `tb_admin.online` (
 --
 
 INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(18, '::1', '2025-01-29 21:16:30', '679ac4de250f6');
+(19, '::1', '2025-01-30 17:33:47', '679be22bb3073'),
+(20, '::1', '2025-01-30 17:35:16', '679be2841f634');
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,7 @@ INSERT INTO `tb_admin.usuarios` (`id`, `usuario`, `senha`, `img`, `nome`, `cargo
 (4, 'user', 'user', 'download.jpg', 'Usuário', 0),
 (5, 'gerente', 'gerente', 'images.jpg', 'Gerente', 2),
 (7, 'funcionario', 'funcionario', '', 'Funcionário', 1),
-(8, 'ceo', 'ceo', '', 'CEO', 3),
+(8, 'ceo', 'ceo', '679be1f54c758.jpg', 'CEO', 3),
 (9, 'miguel', 'miguel', '', 'Miguel Ramires', 4),
 (10, 'usuario', 'usuario', '', 'Usuário Genérico', 0);
 
@@ -121,7 +122,7 @@ ALTER TABLE `tb_admin.visitas`
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.usuarios`

@@ -12,8 +12,11 @@
             $objeto_usuario = new Usuario();
 
             //verificação de nulos e usuarios repetidos
-
-            if($imagem['name'] != '') { 
+            if($nome == '' || $usuario == '' || $senha == '') {
+                Painel::messageToUser('erro', 'Todos os campos básicos precisam estar preenchidos');
+            }else if(Usuario::userExists($usuario) && $usuario != $_SESSION['user']) {
+                Painel::messageToUser('erro', 'O usuário informado esta indisponível');
+            }else if($imagem['name'] != '') { 
                 //O usuário selecionou uma imagem
                 if(Painel::validImage($imagem)) {
                     Painel::deleteFile($imagem_atual);

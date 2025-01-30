@@ -1,10 +1,11 @@
 <?php
     verificaPermissaoPagina(1);
-?>
 
-<?php $usuariosOnline = Painel::listUserOnline();?>
-<?php $getUserTotalToday = Painel::getUserTotalToday()?>
-<?php $getUserTotal = Painel::getUserTotal()?>
+    $usuariosOnline = Painel::listUserOnline();
+    $getUserTotalToday = Painel::getUserTotalToday();
+    $getUserTotal = Painel::getUserTotal();
+    $painelUsers = Painel::painelUsers();
+?>
 
 <div class="box-content left w100">
     <h2><i class="fa-solid fa-table-columns"></i> Painel de controle - <?php echo NOME_EMPRESA;?></h2>

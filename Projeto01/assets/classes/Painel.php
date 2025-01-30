@@ -84,14 +84,22 @@
         }
 
         public static function uploadFile($file) {
-            if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.'uploads/'.$file['name'])) {
-                return $file['name'];
+            $formatoArquivo = explode('.', $file['name']);
+            $nomeImagem = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
+            if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.'uploads/'.$nomeImagem)) {
+                return $nomeImagem;
             }
             return false;
         }
 
         public static function deleteFile($file) {
             @unlink('uploads/'.$file);
+        }
+
+        public static function painelUsers() {
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios`");
+            $sql->execute();
+            return $sql->fetchAll();
         }
     }
 ?>
