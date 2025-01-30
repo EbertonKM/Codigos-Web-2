@@ -1,5 +1,18 @@
 <?php 
     class Painel {
+
+        public static $cargos = [
+            '0' => 'Usuário',
+            '1' => 'Funcionário',
+            '2' => 'Gerente',
+            '3' => 'CEO',
+            '4' => 'Desenvolvedor'
+        ];
+
+        public static function pegaCargo($cargo) {
+            return Painel::$cargos[$cargo];
+        }
+
         public static function logado() {
             //Operador ternário
             return isset($_SESSION['login']) ? true : false;
@@ -19,7 +32,11 @@
                     header('Location: '.INCLUDE_PATH_PAINEL);
                 }
             } else {
-                include('pages/home.php');
+                if($_SESSION['cargo'] == 0) {
+                    include('pages/perfil.php');
+                }else {
+                    include('pages/home.php');
+                }
             }
         }
 

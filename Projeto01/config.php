@@ -33,23 +33,11 @@
 
     spl_autoload_register($autoload);
 
-    //função para os cargos dentro do paiel
-    function pegaCargo($cargo) {
-        $vetor = [
-            '0' => 'Usuário',
-            '1' => 'Funcionário',
-            '2' => 'Gerente',
-            '3' => 'CEO',
-            '4' => 'Desenvolvedor'
-        ];
-        return $vetor[$cargo];
-    }
-
     //função para o menu selecionado
     function selecionarMenu($menuItem) {
         $url = explode('/',@$_GET['url'])[0];
         if($url == $menuItem) {
-            echo 'class="menu-active"';
+            echo '<i class="fa-solid fa-caret-right"></i>';
         }
     }
 

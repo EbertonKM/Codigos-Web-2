@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/01/2025 às 02:31
+-- Tempo de geração: 30/01/2025 às 01:57
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -39,7 +39,7 @@ CREATE TABLE `tb_admin.online` (
 --
 
 INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(12, '::1', '2025-01-28 22:08:44', '67997f9c5cac5');
+(18, '::1', '2025-01-29 21:16:30', '679ac4de250f6');
 
 -- --------------------------------------------------------
 
@@ -63,9 +63,11 @@ CREATE TABLE `tb_admin.usuarios` (
 INSERT INTO `tb_admin.usuarios` (`id`, `usuario`, `senha`, `img`, `nome`, `cargo`) VALUES
 (1, 'admin', 'admin', 'ifpr.png', 'Usuário admin', 4),
 (4, 'user', 'user', 'download.jpg', 'Usuário', 0),
-(5, 'gerente', 'gerente', '', 'Gerente', 2),
+(5, 'gerente', 'gerente', 'images.jpg', 'Gerente', 2),
 (7, 'funcionario', 'funcionario', '', 'Funcionário', 1),
-(8, 'ceo', 'ceo', '', 'CEO', 3);
+(8, 'ceo', 'ceo', '', 'CEO', 3),
+(9, 'miguel', 'miguel', '', 'Miguel Ramires', 4),
+(10, 'usuario', 'usuario', '', 'Usuário Genérico', 0);
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,8 @@ CREATE TABLE `tb_admin.visitas` (
 INSERT INTO `tb_admin.visitas` (`id`, `ip`, `dia`) VALUES
 (1, '::1', '2024-12-11'),
 (2, '::1', '2025-01-27'),
-(3, '::1', '2025-01-28');
+(3, '::1', '2025-01-28'),
+(4, '::1', '2025-01-29');
 
 --
 -- Índices para tabelas despejadas
@@ -118,19 +121,19 @@ ALTER TABLE `tb_admin.visitas`
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.usuarios`
 --
 ALTER TABLE `tb_admin.usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.visitas`
 --
 ALTER TABLE `tb_admin.visitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

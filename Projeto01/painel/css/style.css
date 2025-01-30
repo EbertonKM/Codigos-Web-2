@@ -255,6 +255,26 @@ header {
     background-color: lightgray;
 }
 
+/*Página de Perfil do Usuário*/
+.perfil-box {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.perfil-box i, .perfil-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    text-align: center;
+    font-size: 70px;
+    border-radius: 10px;
+}
+
+.perfil-info *{
+    padding: 10px;
+}
+
 /*Página Editar Usuário*/
 .box-content {
     padding: 20px;
@@ -275,7 +295,8 @@ header {
 
 .box-content form input[type="text"],
 .box-content form input[type="password"],
-.box-content form input[type="file"] {
+.box-content form input[type="file"],
+select {
     margin-top: 5px;
     width: 100%;
     height: 40px;

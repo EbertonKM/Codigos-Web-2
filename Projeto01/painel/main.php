@@ -23,32 +23,36 @@
         <div class="box-usuario">
             <?php if($_SESSION['img'] == '') { ?>
             <div class="avatar-usuario">
-                <i class="fa-solid fa-user"></i>
+                <a href="<?php echo INCLUDE_PATH_PAINEL;?>perfil">
+                    <i class="fa-solid fa-user"></i>
+                </a>
             </div>
             <?php }else { ?>
             <div class="imagem-usuario">
-                <img src="<?php echo INCLUDE_PATH_PAINEL;?>uploads/<?php echo $_SESSION['img'];?>">
+                <a href="<?php echo INCLUDE_PATH_PAINEL;?>perfil">
+                    <img src="<?php echo INCLUDE_PATH_PAINEL;?>uploads/<?php echo $_SESSION['img'];?>">
+                </a>
             </div>
             <?php } ?>
             <div class="nome-usuario">
                 <h2><?php echo $_SESSION['nome']?></h2>
-                <p><?php echo pegaCargo($_SESSION['cargo']);?></p>
+                <p><?php echo Painel::pegaCargo($_SESSION['cargo']);?></p>
             </div>
         </div>
         <div class="items-menu">
             <h2 <?php verificaPermissaoMenu(2)?>>Cadastro</h2>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('cadastrar-slide')?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-slide">Slide</a>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('cadastrar-depoimento')?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento">Depoimentos</a>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('cadastrar-servico')?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-servico">Serviços</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-slide"><?php selecionarMenu('cadastrar-slide')?> Slide</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento"><?php selecionarMenu('cadastrar-depoimento')?> Depoimentos</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-servico"><?php selecionarMenu('cadastrar-servico')?> Serviços</a>
             <h2 <?php verificaPermissaoMenu(2)?>>Gestão</h2>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('gerir-slide')?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-slide">Slide</a>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('gerir-depoimento')?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-depoimento">Depoimentos</a>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('gerir-servico')?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-servico">Serviços</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-slide"><?php selecionarMenu('gerir-slide')?> Slide</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-depoimento"><?php selecionarMenu('gerir-depoimento')?> Depoimentos</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-servico"><?php selecionarMenu('gerir-servico')?> Serviços</a>
             <h2>Usuário</h2>
-            <a <?php verificaPermissaoMenu(2)?> <?php selecionarMenu('adicionar-usuario')?> href="<?php echo INCLUDE_PATH_PAINEL;?>adicionar-usuario">Adicionar</a>
-            <a <?php selecionarMenu('editar-usuario')?> href="<?php echo INCLUDE_PATH_PAINEL;?>editar-usuario">Editar</a>
+            <a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>adicionar-usuario"><?php selecionarMenu('adicionar-usuario')?> Adicionar</a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL;?>editar-usuario"><?php selecionarMenu('editar-usuario')?> Editar</a>
             <h2 <?php verificaPermissaoMenu(3)?>>Configuração</h2>
-            <a <?php verificaPermissaoMenu(3)?> <?php selecionarMenu('editar-configuracao')?> href="<?php echo INCLUDE_PATH_PAINEL;?>editar-configuracao">Editar</a>
+            <a <?php verificaPermissaoMenu(3)?> href="<?php echo INCLUDE_PATH_PAINEL;?>editar-configuracao"><?php selecionarMenu('editar-configuracao')?> Editar</a>
         </div>
     </aside>
     <header>

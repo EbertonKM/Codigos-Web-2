@@ -1,3 +1,7 @@
+<?php
+    verificaPermissaoPagina(1);
+?>
+
 <?php $usuariosOnline = Painel::listUserOnline();?>
 <?php $getUserTotalToday = Painel::getUserTotalToday()?>
 <?php $getUserTotal = Painel::getUserTotal()?>

@@ -11,6 +11,8 @@
             $imagem_atual = $_POST['imagem_atual'];
             $objeto_usuario = new Usuario();
 
+            //verificação de nulos e usuarios repetidos
+
             if($imagem['name'] != '') { 
                 //O usuário selecionou uma imagem
                 if(Painel::validImage($imagem)) {
