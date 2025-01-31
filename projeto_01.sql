@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/01/2025 às 21:49
+-- Tempo de geração: 31/01/2025 às 01:25
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,8 +39,8 @@ CREATE TABLE `tb_admin.online` (
 --
 
 INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(19, '::1', '2025-01-30 17:33:47', '679be22bb3073'),
-(20, '::1', '2025-01-30 17:35:16', '679be2841f634');
+(22, '::1', '2025-01-30 20:20:44', '679c05ce019e5'),
+(23, '::1', '2025-01-30 20:42:44', '679c0e748f845');
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ ALTER TABLE `tb_admin.visitas`
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.usuarios`

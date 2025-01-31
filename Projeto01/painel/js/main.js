@@ -22,10 +22,10 @@ $(function() {
     $(window).resize(function() {
         if(windowSize != $(window)[0].innerWidth) {
             windowSize = $(window)[0].innerWidth;
-            if(!open) {
-                $('header, .content').css('width', '100%');
-            }else {
+            if(open) {
                 $('header, .content').css('width', 'calc(100% - 250px)');
+            }else {
+                $('header, .content').css('width', '100%');
             }
         }
     })

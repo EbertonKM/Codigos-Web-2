@@ -26,6 +26,9 @@
     define('USER', 'root');
     define('PASSWORD', '');
 
+    //definindo o nome das tabela do banco
+    define('TABELA_DEPOIMENTOS', 'tb_admin.depoimentos');
+
     //carregando a classe
     $autoload = function($class) {
         include('assets/classes/'.$class.'.php');

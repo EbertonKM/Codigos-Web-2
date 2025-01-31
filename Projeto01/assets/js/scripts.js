@@ -15,11 +15,11 @@ $(function() {
             //listaMenu.css('display', 'block');
             icone.removeClass('fa-bars');
             icone.addClass('fa-xmark');
-            listaMenu.slideToggle();
+            listaMenu.slideToggle(250);
         } else {
             //listaMenu.fadeOut();
             //listaMenu.css('display', 'none');
-            listaMenu.slideToggle();
+            listaMenu.slideToggle(400);
             icone.removeClass('fa-xmark');
             icone.addClass('fa-bars');
         }

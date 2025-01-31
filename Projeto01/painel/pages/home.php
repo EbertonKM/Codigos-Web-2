@@ -55,3 +55,37 @@
 
     </div>
 </div>
+
+<div class="box-content left w100">
+    <h2><i class="fa-brands fa-chrome"></i> Usuários do Painel</h2>
+    <div class="table-responsive">
+        <div class="row">
+            <div class="col left w33">
+                <h2>Nome</h2>
+            </div>
+            <div class="col left w33">
+                <h2>Usuário</h2>
+            </div>
+            <div class="col left w33">
+                <h2>Cargo</h2>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <?php foreach($painelUsers as $key => $value) { ?>
+            <div class="row">
+            <div class="col left w33">
+                <h2><?php echo $value['nome'];?></h2>
+            </div>
+            <div class="col left w33">
+                <h2><?php echo $value['usuario'];?></h2>
+            </div>
+            <div class="col left w33">
+                <h2><?php echo Painel::pegaCargo($value['cargo']);?></h2>
+            </div>
+            <div class="clear"></div>
+            </div>
+        <?php } ?>
+        
+    </div>
+</div>

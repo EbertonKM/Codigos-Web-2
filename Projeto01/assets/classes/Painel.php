@@ -19,6 +19,7 @@
         }
 
         public static function logout() {
+            setcookie('lembrar', true, time() - 3600, '/');
             session_destroy();
             header('Location:'.INCLUDE_PATH_PAINEL);
         }
@@ -100,6 +101,28 @@
             $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios`");
             $sql->execute();
             return $sql->fetchAll();
+        }
+
+        public static function insert($arr, $nomeTabela) {
+            $certo = true;
+            $query = "INSERT INTO `$nomeTabela` VALUES (null";
+            foreach($arr as $key => $value) {
+                $nome = $key;
+                if($nome = 'acao' || $nome == 'nomeTabela')
+                    continue;
+                if($value == '') {
+                    $certo = false;
+                    break;
+                }
+                $query.=",?";
+                $parametros[] = $value;
+            }
+            $query.=")";
+            if($certo) {
+                $sql = MySql::conectar()->prepare($query);
+                $sql->execute($parametros);
+            }
+            return $certo;
         }
     }
 ?>
