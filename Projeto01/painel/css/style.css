@@ -477,17 +477,38 @@ table td {
 	color: rgb(230, 130, 130);
 }
 
+/*Paginação*/
+.paginacao {
+	margin: 10px 0;
+	text-align: center;
+}
+
+.paginacao a {
+	font-size: 18px;
+	margin: 0 5px;
+	display: inline-block;
+	padding: 6px;
+	border-radius: 10px;
+	background-color: lightsteelblue;
+	text-decoration: none;
+	color: black;
+}
+
+.paginacao a.page-selected {
+	background-color: rgb(120, 200, 120);
+}
+
+.paginacao a:hover {
+	color: white;
+}
+
+/*Listar depoimentos*/
+.wraper-table {
+	overflow: auto;
+}
+
 /*Mobile - Media Query*/
 @media screen and (max-width:768px) {
-	aside {
-		display: none;
-	}
-
-	header, .content {
-		width: 100%;
-		left: 0;
-	}
-
 	.box-metricas {
 		flex-direction: column;
 		flex-wrap: wrap;
