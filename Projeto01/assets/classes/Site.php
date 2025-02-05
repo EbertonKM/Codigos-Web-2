@@ -24,9 +24,10 @@
 
         public static function countUser() {
             if(!isset($_COOKIE['visita'])) {
-                setcookie('visita', true, time()+(60*60*24*7*30));
+                $ip = $_SERVER['REMOTE_ADDR'];
+                setcookie('visita', true, time()+(60*60*24*30));
                 $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.visitas` VALUES(null, ?, ?);");
-                $sql->execute(array($_SERVER['REMOTE_ADDR'], date('Y-m-d')));
+                $sql->execute(array($ip, date('Y-m-d')));
             }
         }
     }
