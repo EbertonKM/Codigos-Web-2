@@ -115,20 +115,91 @@
 				$query.=",?";
 				$parametros[] = $value;
 			}
-			$query.=")";
+			$query.=", ?);";
+			$parametros[] = 0;
 			$sql = MySql::conectar()->prepare($query);
+			$sql->execute($parametros);
+			$lastId = MySql::conectar()->lastInsertId();
+			$sql = MySql::conectar()->prepare("UPDATE `$nomeTabela` SET order_id = ? WHERE id = $lastId");
+			return $sql->execute(array($lastId));
+		}
+
+		public static function update($arr, $tabela, $id) {
+			$parametros = [];
+			$first = true;
+			$query = "UPDATE `$tabela` SET ";
+			foreach($arr as $key => $value) {
+				if($key == 'acao') //ignora o input ação que vem com o post
+					continue;
+				if($value == '') //rejeita o update em caso de campos vazios
+					return false;
+				if($first) {
+					$first = false;
+					$query.="$key = ?";
+				}else {
+					$query.=", $key = ?";
+				}
+				$parametros[] = $value;
+			}
+			$parametros[] = $id;
+			$sql = MySql::conectar()->prepare($query.' WHERE id = ?');
 			return $sql->execute($parametros);
+		}
+
+		public static function get($tabela, $query, $arr) {
+			$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
+			$sql->execute($arr);
+			return $sql->fetch();
 		}
 		
 		public static function getAll($tabela, $start = null, $end = null) {
 			if($start == null || $end == null) {
-				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`;");
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id DESC;");
 				$sql->execute();
 			}else {
-				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY id DESC LIMIT $start, $end;");
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id DESC LIMIT $start, $end;");
 				$sql->execute();
 			}
 			return $sql->fetchAll();
+		}
+
+		public static function delete($tabela, $id = false) {
+			if($id == false) {
+				$sql = MySql::conectar()->prepare("DELETE FROM `$tabela`");
+				return $sql->execute();
+			}else {
+				$sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE id = ?");
+				return $sql->execute(array($id));
+			}
+		}
+
+		public static function redirect($url) {
+			echo '<script>location.href="'.$url.'"</script>';
+			die();
+		}
+
+		public static function orderItem($tabela, $orderType, $id) {
+			if($orderType == 'up') {
+				$infoItemAtual = Painel::get($tabela, 'id = ?', array($id));
+				$order_id = $infoItemAtual['order_id'];
+				$itemBefore = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id < $order_id ORDER BY order_id DESC LIMIT 1;");
+				$itemBefore->execute();
+				if($itemBefore->rowCount() == 0)
+					return;
+				$itemBefore = $itemBefore->fetch();
+				Painel::update(array('order_id' => $infoItemAtual['order_id']), $tabela, $itemBefore['id']);
+				Painel::update(array('order_id' => $itemBefore['order_id']), $tabela, $infoItemAtual['id']);
+			}else if($orderType == 'down'){
+				$infoItemAtual = Painel::get($tabela, 'id = ?', array($id));
+				$order_id = $infoItemAtual['order_id'];
+				$itemBefore = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE order_id > $order_id ORDER BY order_id ASC LIMIT 1;");
+				$itemBefore->execute();
+				if($itemBefore->rowCount() == 0)
+					return;
+				$itemBefore = $itemBefore->fetch();
+				Painel::update(array('order_id' => $infoItemAtual['order_id']), $tabela, $itemBefore['id']);
+				Painel::update(array('order_id' => $itemBefore['order_id']), $tabela, $infoItemAtual['id']);
+			}
 		}
 	}
 ?>

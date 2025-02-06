@@ -31,4 +31,13 @@ $(function() {
 	})
 	
 	$('[format="data"]').mask('00/00/0000')
+
+	$('[actionBtn="delete"]').click(function() {
+		let text;
+		if(confirm("Deseja excluir o registro?") == true) {
+			return true;
+		}else {
+			return false;
+		}
+	})
 })

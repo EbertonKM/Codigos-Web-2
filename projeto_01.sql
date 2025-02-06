@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/02/2025 às 19:40
+-- Tempo de geração: 06/02/2025 às 02:18
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,15 +31,17 @@ CREATE TABLE `tb_admin.depoimentos` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `depoimento` varchar(255) NOT NULL,
-  `data` date NOT NULL
+  `data` date NOT NULL,
+  `order_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `tb_admin.depoimentos`
 --
 
-INSERT INTO `tb_admin.depoimentos` (`id`, `nome`, `depoimento`, `data`) VALUES
-(2, 'Primeiro Depoimento', 'Este é o primeiro depoimento, exemplo genérico de depoimento com informações depoimentísticas de um depoimento que foi depoimentado por um depoimentador.', '2025-02-04');
+INSERT INTO `tb_admin.depoimentos` (`id`, `nome`, `depoimento`, `data`, `order_id`) VALUES
+(2, 'Primeiro Depoimento', 'Este é o primeiro depoimento, exemplo genérico de depoimento com informações depoimentísticas de um depoimento que foi depoimentado por um depoimentador.', '2025-02-04', 5),
+(3, 'Um segundo depoimento', 'Este é um segundo depoimento, depoimentado durante a produção do site para testar as funcionalidades do depoimentamento de depoimentos por um depoimentador.', '2025-02-05', 2);
 
 -- --------------------------------------------------------
 
@@ -53,6 +55,13 @@ CREATE TABLE `tb_admin.online` (
   `ultima_acao` datetime NOT NULL,
   `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_admin.online`
+--
+
+INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
+(24, '::1', '2025-02-05 22:15:33', '67a3e712d29d1');
 
 -- --------------------------------------------------------
 
@@ -102,7 +111,8 @@ INSERT INTO `tb_admin.visitas` (`id`, `ip`, `dia`) VALUES
 (1, '::1', '2024-12-11'),
 (2, '::1', '2025-01-27'),
 (3, '::1', '2025-01-28'),
-(4, '::1', '2025-01-29');
+(4, '::1', '2025-01-29'),
+(5, '::1', '2025-02-05');
 
 --
 -- Índices para tabelas despejadas
@@ -140,13 +150,13 @@ ALTER TABLE `tb_admin.visitas`
 -- AUTO_INCREMENT de tabela `tb_admin.depoimentos`
 --
 ALTER TABLE `tb_admin.depoimentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.usuarios`
@@ -158,7 +168,7 @@ ALTER TABLE `tb_admin.usuarios`
 -- AUTO_INCREMENT de tabela `tb_admin.visitas`
 --
 ALTER TABLE `tb_admin.visitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

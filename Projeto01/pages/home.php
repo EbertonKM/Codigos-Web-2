@@ -69,27 +69,19 @@
         <div class="center">
             <div id="depoimentos" class="w50 left depoimentos-container">
                 <h2 class="title">Depoimentos</h2>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                        mollitia tempore provident, earum
-                        excepturi at necessitatibus eos aperiam reprehenderit ea non cum omnis enim dicta quo, iste,
-                        minus recusandae sapiente.</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-                        labore quasi architecto,
-                        assumenda neque sapiente repellendus ex eos atque vero consequuntur ipsum nostrum ipsam quae
-                        aliquam! Omnis minima aliquid ducimus.</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
-                <div class="depoimento-single">
-                    <p class="depoimento-descricao">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-                        labore quasi architecto,
-                        assumenda neque sapiente repellendus ex eos atque vero consequuntur ipsum nostrum ipsam quae
-                        aliquam! Omnis minima aliquid ducimus.</p>
-                    <p class="nome-autor">Lorem Ipsum</p>
-                </div>
+                <?php
+                $tabela = TABELA_DEPOIMENTOS;
+                $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id DESC LIMIT 3");
+                $sql->execute();
+                $depoimentos = $sql->fetchAll();
+                foreach($depoimentos as $key => $value) { ?>
+                    <div class="depoimento-single">
+                        <p class="depoimento-descricao">
+                            <?php echo $value['depoimento']; ?>
+                        </p>
+                        <p class="nome-autor"><?php echo $value['nome']?> - <?php echo Util::dateFormat($value['data'])?></p>
+                    </div>
+                <?php } ?>
             </div>
             <div id="servicos" class="w50 left serviços-container">
                 <h2 class="title">Serviços</h2>
