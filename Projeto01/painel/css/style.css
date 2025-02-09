@@ -480,7 +480,7 @@ table td {
 /*Paginação*/
 .paginacao {
 	margin: 10px 0;
-	text-align: center;
+	text-align: center;;
 }
 
 .paginacao a {
@@ -505,6 +505,15 @@ table td {
 /*Listar depoimentos*/
 .wraper-table {
 	overflow: auto;
+}
+
+/*Listar slides*/
+.img-gerir-slide {
+	height: 90px;
+	width: 120px;
+	margin: 0;
+	padding: 0;
+	object-fit: cover;
 }
 
 /*Mobile - Media Query*/

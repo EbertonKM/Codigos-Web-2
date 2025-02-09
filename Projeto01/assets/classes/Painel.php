@@ -124,7 +124,7 @@
 			return $sql->execute(array($lastId));
 		}
 
-		public static function update($arr, $tabela, $id) {
+		public static function update($arr, $tabela, $id, $single = false) {
 			$parametros = [];
 			$first = true;
 			$query = "UPDATE `$tabela` SET ";
@@ -141,19 +141,32 @@
 				}
 				$parametros[] = $value;
 			}
-			$parametros[] = $id;
-			$sql = MySql::conectar()->prepare($query.' WHERE id = ?');
-			return $sql->execute($parametros);
+			if($single == false) {
+				$parametros[] = $id;
+				$sql = MySql::conectar()->prepare($query.' WHERE id = ?');
+				return $sql->execute($parametros);
+			}else {
+				$sql = MySql::conectar()->prepare($query);
+				return $sql->execute($parametros);
+			}
+			
 		}
 
-		public static function get($tabela, $query, $arr) {
-			$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
-			$sql->execute($arr);
-			return $sql->fetch();
+		public static function get($tabela, $query = '', $arr = '') {
+			if($query != false) {
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
+				$sql->execute($arr);
+				return $sql->fetch();
+			}else {
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
+				$sql->execute();
+				return $sql->fetch();	
+			}
 		}
 		
+		//Só funciona para tabelas com o campo order_id ;-;
 		public static function getAll($tabela, $start = null, $end = null) {
-			if($start == null || $end == null) {
+			if($start === null || $end === null) {
 				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id DESC;");
 				$sql->execute();
 			}else {

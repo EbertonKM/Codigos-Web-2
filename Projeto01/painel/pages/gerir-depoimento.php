@@ -9,8 +9,8 @@
 	}
 
 	$paginaAtual = isset($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
-	$porPagina = 2;
-	$depoimentos = Painel::getAll(TABELA_DEPOIMENTOS, ($paginaAtual - 1)*$porPagina, $porPagina);
+	$porPagina = 5;
+	$depoimentos = Painel::getAll(TABELA_DEPOIMENTOS, (($paginaAtual - 1)*$porPagina), $porPagina);
 ?>
 
 <div class="box-content">
