@@ -7,7 +7,8 @@
 	<form method="post" enctype="multipart/form-data">
 		<?php
 			if(isset($_POST['acao'])) {
-				if(Painel::insert($_POST, TABELA_DEPOIMENTOS)) {
+				$arr = array_merge($_POST, array('order_id' => '0'));
+				if(Painel::insert($arr, TABELA_DEPOIMENTOS)) {
 					Painel::messageToUser('sucesso', 'Depoimento cadastrado com sucesso');
 				}else {
 					Painel::messageToUser('erro', 'Não foi possivel cadastrar o depoimento');

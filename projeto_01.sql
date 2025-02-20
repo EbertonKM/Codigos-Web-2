@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/02/2025 às 01:11
+-- Tempo de geração: 20/02/2025 às 02:14
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `projeto_01`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_admin.categorias`
+--
+
+CREATE TABLE `tb_admin.categorias` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `order_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_admin.categorias`
+--
+
+INSERT INTO `tb_admin.categorias` (`id`, `nome`, `slug`, `order_id`) VALUES
+(1, 'Categoria 1', 'categoria-1', 1),
+(2, 'Categoria 2', 'categoria-2', 2),
+(3, 'Categoria 3', 'categoria-3', 3);
 
 -- --------------------------------------------------------
 
@@ -67,7 +89,31 @@ CREATE TABLE `tb_admin.depoimentos` (
 INSERT INTO `tb_admin.depoimentos` (`id`, `nome`, `depoimento`, `data`, `order_id`) VALUES
 (2, 'Primeiro Depoimento', 'Este é o primeiro depoimento, exemplo genérico de depoimento com informações depoimentísticas de um depoimento que foi depoimentado por um depoimentador.', '2025-02-04', 5),
 (3, 'Um segundo depoimento', 'Este é um segundo depoimento, depoimentado durante a produção do site para testar as funcionalidades do depoimentamento de depoimentos por um depoimentador.', '2025-02-05', 2),
-(6, 'Novo depoimento', 'Loren lorendo loreamento dos lorens do depoimento', '2025-02-06', 6);
+(6, 'Novo depoimento', 'Loren lorendo loreamento dos lorens do depoimento', '2025-02-06', 6),
+(8, 'Depoimento de teste', 'Esse depoimento foi depoimentado a fim de identificar possíveis erros durante a implementação do código', '2025-02-19', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_admin.noticias`
+--
+
+CREATE TABLE `tb_admin.noticias` (
+  `id` int(11) NOT NULL,
+  `categoria_id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `conteudo` text NOT NULL,
+  `capa` varchar(255) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `slug` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_admin.noticias`
+--
+
+INSERT INTO `tb_admin.noticias` (`id`, `categoria_id`, `titulo`, `conteudo`, `capa`, `order_id`, `slug`) VALUES
+(2, 2, 'Outra noticia', 'Gosto de ser criança pq vai tatata', '67b678ca2bd4a.png', 2, 'outra-noticia');
 
 -- --------------------------------------------------------
 
@@ -81,6 +127,13 @@ CREATE TABLE `tb_admin.online` (
   `ultima_acao` datetime NOT NULL,
   `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_admin.online`
+--
+
+INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
+(25, '::1', '2025-02-19 22:13:25', '67b65f0a503cc');
 
 -- --------------------------------------------------------
 
@@ -100,8 +153,9 @@ CREATE TABLE `tb_admin.servicos` (
 
 INSERT INTO `tb_admin.servicos` (`id`, `servico`, `order_id`) VALUES
 (1, 'Um serviço prestado por especialistas em serviços, garantindo que seu serviço seja servido com excelência por quem entende de servir serviços.', 1),
-(2, 'Realizamos serviços para quem busca um serviço bem realizado, feito por realizadores de serviços que dominam a arte do servir.', 3),
-(3, 'Se você precisa de um serviço, nosso serviço está aqui para servir, porque servir serviços é o servimos de melhor.', 2);
+(2, 'Realizamos serviços para quem busca um serviço bem realizado, feito por realizadores de serviços que dominam a arte do servir.', 2),
+(3, 'Se você precisa de um serviço, nosso serviço está aqui para servir, porque servir serviços é o servimos de melhor.', 5),
+(5, 'Esse serviço apenas serve a servir o serviço de identificar erros durante a implementação do código... Isso de fato da serviço', 3);
 
 -- --------------------------------------------------------
 
@@ -123,7 +177,9 @@ CREATE TABLE `tb_admin.slides` (
 INSERT INTO `tb_admin.slides` (`id`, `nome`, `slide`, `order_id`) VALUES
 (1, 'ifprPalmas', '67a66a14cbfb2.jpg', 1),
 (2, 'ifrpUniaoDaVitoria', '67a6723c0f473.jpg', 2),
-(3, 'ifprFoz', '67a7c6d8a0ff9.jpeg', 3);
+(3, 'ifprFoz', '67a7c6d8a0ff9.jpeg', 3),
+(4, 'ifprIrati', '67b65adf4d8e5.jpg', 4),
+(6, 'ifprLondrina', '67b681b1531c5.jpeg', 6);
 
 -- --------------------------------------------------------
 
@@ -181,9 +237,21 @@ INSERT INTO `tb_admin.visitas` (`id`, `ip`, `dia`) VALUES
 --
 
 --
+-- Índices de tabela `tb_admin.categorias`
+--
+ALTER TABLE `tb_admin.categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `tb_admin.depoimentos`
 --
 ALTER TABLE `tb_admin.depoimentos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `tb_admin.noticias`
+--
+ALTER TABLE `tb_admin.noticias`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -221,28 +289,40 @@ ALTER TABLE `tb_admin.visitas`
 --
 
 --
+-- AUTO_INCREMENT de tabela `tb_admin.categorias`
+--
+ALTER TABLE `tb_admin.categorias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `tb_admin.depoimentos`
 --
 ALTER TABLE `tb_admin.depoimentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `tb_admin.noticias`
+--
+ALTER TABLE `tb_admin.noticias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.servicos`
 --
 ALTER TABLE `tb_admin.servicos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.slides`
 --
 ALTER TABLE `tb_admin.slides`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.usuarios`

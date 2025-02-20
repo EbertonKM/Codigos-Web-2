@@ -17,7 +17,7 @@
 				Painel::messageToUser('erro', 'A imagem precisa estar no formato jpeg, jpg ou png de até 750kb');
 			}else {
 				$imagem = Painel::uploadFile($imagem);
-				$arr = ['nome' => $nome, 'slide' => $imagem];
+				$arr = ['nome' => $nome, 'slide' => $imagem, 'order_id' => '0'];
 				if(Painel::insert($arr, TABELA_SLIDES)) {
 					Painel::messageToUser('sucesso', 'O cadastro do slide foi realizado com sucesso');
 				}else

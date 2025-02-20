@@ -31,6 +31,8 @@
 	define('TABELA_SERVICOS', 'tb_admin.servicos');
 	define('TABELA_SLIDES', 'tb_admin.slides');
 	define('TABELA_CONFIGURACOES', 'tb_admin.config');
+	define('TABELA_CATEGORIAS', 'tb_admin.categorias');
+	define('TABELA_NOTICIAS', 'tb_admin.noticias');
 
 	//carregando a classe
 	$autoload = function($class) {
@@ -63,6 +65,13 @@
 		}else {
 			include('painel/pages/permissao-negada.php');
 			die();
+		}
+	}
+	
+	//função para recuperar os campos
+	function recoverPost($post) {
+		if(isset($_POST[$post])) {
+			echo $_POST[$post];
 		}
 	}
 ?>

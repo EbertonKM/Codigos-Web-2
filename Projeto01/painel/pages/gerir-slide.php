@@ -3,7 +3,7 @@
 	if(isset($_GET['excluir'])) {
 		$idExcluir = intval($_GET['excluir']);
 		$tabela = TABELA_SLIDES;
-		$selectImagem = MySql::conectar("SELECT slide FROM `$tabela` WHERE id = ?;");
+		$selectImagem = MySql::conectar()->prepare("SELECT slide FROM `$tabela` WHERE id = ?;");
 		$selectImagem->execute(array($idExcluir));
 		$imagem = $selectImagem->fetch()['slide'];
 		Painel::deleteFile($imagem);
@@ -19,7 +19,7 @@
 ?>
 
 <div class="box-content">
-	<h2><i class="fa-solid fa-table-list"></i> Listar Depoimentos</h2>
+	<h2><i class="fa-solid fa-table-list"></i> Listar Slides</h2>
 	<div class="wraper-table">
 		<table>
 			<tr>

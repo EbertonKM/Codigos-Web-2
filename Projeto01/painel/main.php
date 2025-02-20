@@ -45,10 +45,14 @@
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-slide"><?php selecionarMenu('cadastrar-slide')?> Slide</a>
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-depoimento"><?php selecionarMenu('cadastrar-depoimento')?> Depoimentos</a>
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-servico"><?php selecionarMenu('cadastrar-servico')?> Serviços</a>
+			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-categoria"><?php selecionarMenu('cadastrar-categoria')?> Categorias</a>
+			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>cadastrar-noticia"><?php selecionarMenu('cadastrar-noticia')?> Notícias</a>
 			<h2 <?php verificaPermissaoMenu(2)?>>Gestão</h2>
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-slide"><?php selecionarMenu('gerir-slide')?> Slide</a>
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-depoimento"><?php selecionarMenu('gerir-depoimento')?> Depoimentos</a>
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-servico"><?php selecionarMenu('gerir-servico')?> Serviços</a>
+			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-categoria"><?php selecionarMenu('gerir-categoria')?> Categorias</a>
+			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>gerir-noticia"><?php selecionarMenu('gerir-noticia')?> Notícias</a>
 			<h2>Usuário</h2>
 			<a <?php verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL;?>adicionar-usuario"><?php selecionarMenu('adicionar-usuario')?> Adicionar</a>
 			<a href="<?php echo INCLUDE_PATH_PAINEL;?>editar-usuario"><?php selecionarMenu('editar-usuario')?> Editar</a>
