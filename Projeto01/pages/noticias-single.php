@@ -13,8 +13,9 @@ if ($verificaCategoria->rowCount() == 0) {
 
 $categoriaInfo = $verificaCategoria->fetch();
 
+$tabela = TABELA_NOTICIAS;
 $post = MySql::conectar()->prepare("SELECT * 
-    FROM `tb_admin.noticias` 
+    FROM `$tabela` 
     WHERE slug = ? 
     AND categoria_id = ?");
 

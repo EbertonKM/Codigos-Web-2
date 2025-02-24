@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/02/2025 às 20:41
+-- Tempo de geração: 25/02/2025 às 00:19
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -113,9 +113,9 @@ CREATE TABLE `tb_admin.noticias` (
 --
 
 INSERT INTO `tb_admin.noticias` (`id`, `categoria_id`, `titulo`, `conteudo`, `capa`, `order_id`, `slug`) VALUES
-(2, 2, 'Outra noticia', 'Gosto de ser criança pq vai tatata', '67b678ca2bd4a.png', 2, 'outra-noticia'),
-(3, 3, 'C passa a ser a línguagem mais utilizada', '<p>Segundo programadores eles usam muito C</p>', '67bbfec7b24d2.jpg', 3, 'c-passa-a-ser-a-linguagem-mais-utilizada'),
-(4, 1, 'C# passa a ser a SEGUNDA línguagem mais utilizada', '<p>Segundo programadores else usam muito C++, mas tamb&eacute;m usam bastante C#</p>', '67bbfeed217c2.jpg', 4, 'c-passa-a-ser-a-segunda-linguagem-mais-utilizada');
+(2, 2, 'Linguagem de desenvolvimento', '<p>Este site foi desenvolvido majoritariamente utilizando o PHP.</p>', '67bcfafb167f6.png', 3, 'linguagem-de-desenvolvimento'),
+(3, 3, 'Animações', '<p>Praticamente todas as anima&ccedil;&otilde;es, incluindo a movimenta&ccedil;&atilde;o do menu do painel foi feito utilizando de t&eacute;cnicas mirabolantes com JavaScript.</p>', '67bcfb4200d92.jpg', 2, 'animacoes'),
+(4, 1, 'Nova plataforma institucional', '<p>A mais nova plataforma institucional j&aacute; se encontra me funcionamento. Desenvolvido pelo aluno Eberton Kociba, estudante do quarto per&iacute;odo de An&aacute;lise e Desenvolvimento de Sistemas pelo Instituto Federal do Paran&aacute;, com a mentoria do professor Dr. Robyson Aggio.<br>Durante as aulas diversos conceitos de HTML, CSS, PHP, JS e outras ferramentas de desenvolvimento foram trabalhadas, assim enriquecendo mais o produto final.</p>', '67bcfab13585d.jpg', 4, 'nova-plataforma-institucional');
 
 -- --------------------------------------------------------
 
@@ -135,7 +135,7 @@ CREATE TABLE `tb_admin.online` (
 --
 
 INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(26, '::1', '2025-02-24 14:32:14', '67bbc14f4221a');
+(27, '::1', '2025-02-24 20:17:02', '67bcf1fb6144b');
 
 -- --------------------------------------------------------
 
@@ -232,7 +232,8 @@ INSERT INTO `tb_admin.visitas` (`id`, `ip`, `dia`) VALUES
 (2, '::1', '2025-01-27'),
 (3, '::1', '2025-01-28'),
 (4, '::1', '2025-01-29'),
-(5, '::1', '2025-02-05');
+(5, '::1', '2025-02-05'),
+(6, '::1', '2025-02-24');
 
 --
 -- Índices para tabelas despejadas
@@ -312,7 +313,7 @@ ALTER TABLE `tb_admin.noticias`
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.servicos`
@@ -336,7 +337,7 @@ ALTER TABLE `tb_admin.usuarios`
 -- AUTO_INCREMENT de tabela `tb_admin.visitas`
 --
 ALTER TABLE `tb_admin.visitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
