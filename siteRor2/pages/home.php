@@ -13,52 +13,22 @@
 
         <!--Informações usando display flex-->
         <section id="informacoes">
-            <div class="info-container bg-fosco">
+            <?php
+            $tabela = TABELA_NOTICIAS;
+            $informacoes = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY order_id");
+            $informacoes->execute();
+            $informacoes = $informacoes->fetchAll();
+            foreach($informacoes as $key => $value) {
+            ?>
+            <div class="info-container bg-fosco <?php if($value['order_id']%2 == 0) echo 'flex-invertido';?>">
                 <div class="texto">
-                    <h3>Sobreviva em um planeta alienígena</h3>
-                    <p>Mais de 12 locais feitos à mão, todos lotados de monstros desafiadores e chefes enormes
-                        que se opõem à sua existência. Lute até o chefe final e escape ou continue seu jogo
-                        infinitamente e
-                        veja o quanto você é capaz de sobreviver. Um sistema de escalonamento único faz com que você e
-                        seus
-                        inimigos ganhem poder ilimitado ao longo do jogo.
-                    </p>
+                    <h3><?php echo $value['titulo']?></h3>
+                    <p><?php echo $value['conteudo']?></p>
                 </div>
-                <img src="<?php echo INCLUDE_PATH;?>assets/img/backgrounds/sobreviva.jfif" alt="imagem-ilustração" class="imagem">
+                <img src="<?php echo INCLUDE_PATH_PAINEL;?>uploads/<?php echo $value['capa']?>" alt="imagem-ilustração" class="imagem">
             </div>
-            <div class="info-container flex-invertido bg-fosco">
-                <div class="texto">
-                    <h3>Descubra novos itens poderosos</h3>
-                    <p>Mais de 110 itens mantêm cada partida atualizada e cheia de novos desafios. Quanto
-                        mais
-                        itens você coletar, maiores e mais surpreendentes as combinações dos efeitos podem ser. Quanto
-                        mais
-                        itens você encontrar, mais folclore (e estratégias) você descobrirá por meio dos registros.
-                    </p>
-                </div>
-                <img src="<?php echo INCLUDE_PATH;?>assets/img/backgrounds/itens-poderosos.jpg" alt="imagem-ilustração" class="imagem">
-            </div>
-            <div class="info-container bg-fosco">
-                <div class="texto">
-                    <h3>Libere novos jeitos de jogar</h3>
-                    <p>Libere uma tripulação de sobreviventes jogáveis, cada um com estilo de combate
-                        único e
-                        diferentes habilidades para dominar. Conheça os mistérios dos Artefatos e ative modificações de
-                        jogabilidade. Com fases, inimigos e itens aleatórios, nenhuma partida será igual a outra.
-                    </p>
-                </div>
-                <img src="<?php echo INCLUDE_PATH;?>assets/img/backgrounds/novos-jeitos.jpg" alt="imagem-ilustração" class="imagem">
-            </div>
-            <div class="info-container flex-invertido bg-fosco">
-                <div class="texto">
-                    <h3>Jogue Individual ou cooperativamente</h3>
-                    <p>Aventure-se por conta própria ou com até três amigos no modo cooperativo online ou
-                        dispute o desafio rotativo das Provações Prismáticas. Sobreviventes novinhos em folha, como a
-                        Artífice a Caçadora o Comando e é claro, o Engenheiro.
-                    </p>
-                </div>
-                <img src="<?php echo INCLUDE_PATH;?>assets/img/backgrounds/solo-coop.jpg" alt="imagem-ilustração" class="imagem">
-            </div>
+            <?php } ?>
+            
             <div class="info-container bg-fosco itens-vertical">
                 <h3>Fique sabendo das últimas notícias</h3>
                 <form action="" method="post">

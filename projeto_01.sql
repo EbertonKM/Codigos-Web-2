@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/02/2025 às 02:14
+-- Tempo de geração: 24/02/2025 às 20:41
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -113,7 +113,9 @@ CREATE TABLE `tb_admin.noticias` (
 --
 
 INSERT INTO `tb_admin.noticias` (`id`, `categoria_id`, `titulo`, `conteudo`, `capa`, `order_id`, `slug`) VALUES
-(2, 2, 'Outra noticia', 'Gosto de ser criança pq vai tatata', '67b678ca2bd4a.png', 2, 'outra-noticia');
+(2, 2, 'Outra noticia', 'Gosto de ser criança pq vai tatata', '67b678ca2bd4a.png', 2, 'outra-noticia'),
+(3, 3, 'C passa a ser a línguagem mais utilizada', '<p>Segundo programadores eles usam muito C</p>', '67bbfec7b24d2.jpg', 3, 'c-passa-a-ser-a-linguagem-mais-utilizada'),
+(4, 1, 'C# passa a ser a SEGUNDA línguagem mais utilizada', '<p>Segundo programadores else usam muito C++, mas tamb&eacute;m usam bastante C#</p>', '67bbfeed217c2.jpg', 4, 'c-passa-a-ser-a-segunda-linguagem-mais-utilizada');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,7 @@ CREATE TABLE `tb_admin.online` (
 --
 
 INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
-(25, '::1', '2025-02-19 22:13:25', '67b65f0a503cc');
+(26, '::1', '2025-02-24 14:32:14', '67bbc14f4221a');
 
 -- --------------------------------------------------------
 
@@ -304,13 +306,13 @@ ALTER TABLE `tb_admin.depoimentos`
 -- AUTO_INCREMENT de tabela `tb_admin.noticias`
 --
 ALTER TABLE `tb_admin.noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.servicos`

@@ -7,8 +7,7 @@ if(!isset($url[2])) {
 
 <section class="header-noticias">
     <div class="center">
-        <h2><i class="fa-solid fa-bell"></i></h2>
-        <h2>Acompanhe as últimas notícias do portal</h2>
+        <h2><i class="fa-solid fa-bell"></i> Acompanhe as últimas notícias do portal</h2>
     </div>
 </section>
 
@@ -47,7 +46,7 @@ if(!isset($url[2])) {
                     <div>
                         <img src="<?php echo INCLUDE_PATH;?>assets/img/local-trabalho.png">
                     </div>
-                    <?php echo $infoSite['nome_autor']?>
+                    <?php echo $infoSite['nome_autor']?> <br>
                     <?php echo $infoSite['descricao']?>
                 </div>
             </div>
@@ -56,14 +55,12 @@ if(!isset($url[2])) {
         <div class="conteudo-portal">
             <div class="header-conteudo-portal">
                 <?php
-                if(!isset($categoria)) { //quick fix pra nao ficar dando warning o @ não funciona
-                    $categoria = null;
-                    $categoria['nome'] = '';
-                }
-                if(@$categoria['nome'] == '') {
-                    echo '<h2>Visualizando todos os posts</h2>';
-                }else {
-                    echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
+                if(!isset($_POST['parametro'])) {
+                    if(@$categoria['nome'] == '') {
+                        echo '<h2>Visualizando todos os posts</h2>';
+                    }else {
+                        echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
+                    }
                 }
                 $tabela = TABELA_NOTICIAS;
                 $query = "SELECT * FROM `$tabela`";
