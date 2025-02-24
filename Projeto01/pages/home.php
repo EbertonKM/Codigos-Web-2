@@ -23,12 +23,14 @@ $slides = $slides->fetchAll();
 	<!--Descricao-autor-->
 	<section class="descricao-autor">
 		<div class="center">
-			<div class="w50 left">
-				<h2><?php echo $infosite['nome_autor']?></h2>
-				<p><?php echo $infosite['descricao']?></p>
-			</div>
-			<div class="w50 left">
-				<img src="<?php echo INCLUDE_PATH;?>assets/img/local-trabalho.png" alt="Local de trabalho">
+			<div class="w100">
+				<h2 class="text-center">
+					<img src="<?php echo INCLUDE_PATH;?>assets/img/local-trabalho.png">
+					<?php echo $infosite['nome_autor']?>
+				</h2>
+				<h3 class="text-center">
+					<p><?php echo $infosite['descricao']?></p>
+				</h3>
 			</div>
 			<!--Clear float-->
 			<div class="clear"></div>

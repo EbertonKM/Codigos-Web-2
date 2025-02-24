@@ -4,6 +4,18 @@
 		$idExcluir = intval($_GET['excluir']);
 		$tabela = TABELA_CATEGORIAS;
 		Painel::delete($tabela, $idExcluir);
+
+		$tabelaNoticia = TABELA_NOTICIAS;
+		$noticias = MySql::conectar()->prepare("SELECT * FROM `$tabelaNoticia` WHERE categoria_id = ?");
+		$noticias->execute(array($idExcluir));
+		$noticias = $noticias->fetchAll();
+		foreach($noticias as $key => $value) {
+			$imgDelete = $value['capa'];
+			Painel::deleteFile($imgDelete);
+		}
+		$noticias = MySql::conectar()->prepare("DELETE FROM `$tabelaNoticia` WHERE categoria_id = ?");
+		$noticias->execute(array($idExcluir));
+
 		Painel::redirect(INCLUDE_PATH_PAINEL.'gerir-categoria');
 	}else if(isset($_GET['order']) && isset($_GET['id'])) {
 		Painel::orderItem($tabela, $_GET['order'], $_GET['id']);

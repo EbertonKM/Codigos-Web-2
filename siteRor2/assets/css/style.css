@@ -79,11 +79,11 @@ section,
 @media screen and (min-width:991px) {
     .hover-scale:hover, .hover-scale-survivor:hover {
         transform: scale(1.2);
-        transition: transform 0.2s ease;
+        transition: transform 0.1s ease;
     }
 
     .hover-scale, .hover-scale-survivor {
-        transition: transform 0.2s ease;
+        transition: transform 0.1s ease;
     }
 }
 

@@ -55,11 +55,11 @@
 		</div>
 		<div class="form-group">
 			<label for="titulo">Título: </label>
-			<input type="text" name="titulo" required>
+			<input type="text" name="titulo" value="<?php recoverPost('titulo')?>" required>
 		</div>
 		<div class="form-group">
 			<label for="conteudo">Conteúdo: </label>
-			<textarea name="conteudo" id=""></textarea>
+			<textarea class="tinymce" name="conteudo" id=""><?php recoverPost('conteudo')?></textarea>
 		</div>
 		<div class="form-group">
 			<label for="imagem">Imagem: </label>

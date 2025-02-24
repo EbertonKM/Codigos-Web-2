@@ -27,6 +27,7 @@
 </head>
 
 <body>
+<base base="<?php echo INCLUDE_PATH; ?>"/>
 	<?php
 		//Obtendo a url se existir ou home
 		$url = isset($_GET['url']) ? $_GET['url'] : 'home'; //equivalente a lógica de if(exists(get('url'))) {url = get(url)} else {url = 'home'}
@@ -51,6 +52,7 @@
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH;?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH;?>noticias">Notícias</a></li>
 					<li><a href="<?php echo INCLUDE_PATH;?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH;?>servicos">Serviços</a></li>
 					<li><a href="<?php echo INCLUDE_PATH;?>contato">Contato</a></li>
@@ -61,6 +63,7 @@
 				<div class="bars-mobile fa-solid fa-bars"></div>
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH;?>">Home</a></li>
+					<li><a href="<?php echo INCLUDE_PATH;?>noticias">Notícias</a></li>
 					<li><a href="<?php echo INCLUDE_PATH;?>depoimentos">Depoimentos</a></li>
 					<li><a href="<?php echo INCLUDE_PATH;?>servicos">Serviços</a></li>
 					<li><a href="<?php echo INCLUDE_PATH;?>contato">Contato</a></li>
@@ -78,8 +81,13 @@
 			include('pages/'.$url.'.php');
 		} else {
 			if($url != 'depoimentos' && $url != 'servicos') {
-				$is404 = true;
-				include('pages/404.php');
+				$urlPar = explode('/', $url)[0];
+				if($urlPar != 'noticias') {
+					$is404 = true;
+					include('pages/404.php');
+				}else {
+					include('pages/noticias.php');
+				}
 			} else {
 				include('pages/home.php');
 			}
@@ -114,6 +122,11 @@
 	<?php 
 		if($url == 'home' || $url == '') {?>
 			<script src="<?php echo INCLUDE_PATH;?>assets/js/especialidades.js"></script>
+	<?php } ?>
+
+	<?php 
+		if($url[0] == 'noticias') {?>
+			<script src="<?php echo INCLUDE_PATH;?>assets/js/filtro.js"></script>
 	<?php } ?>
 
 </body>
